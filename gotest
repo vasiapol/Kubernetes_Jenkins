@@ -1,4 +1,4 @@
-podTemplate(label: 'beta.kubernetes.io/arch: amd64', 
+podTemplate(label: 'node2', 
     containers: [
         containerTemplate(
             name: 'golang',
