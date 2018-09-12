@@ -1,20 +1,13 @@
-pipeline {
-    agent {
-        kubernetes {
-            label 'jenkins-demo'
-            containerTemplate {
-                name 'dind-jdk8-maven3'
-                image 'eu.gcr.io/jenkins-demo/dind-jdk8-maven3:v4'
-                ttyEnabled true
-                command 'cat'
-            }
-        }
-    }
-	stages {
-     stage('Run maven') {
-      steps {
-       sh 'hostname'
-      }
-    }
-  }
-}
+podTemplate(label: 'build-pod',
+    containers: [
+        containerTemplate(name: 'jnlp', image: JNLP_IMAGE, args: '${computer.jnlpmac} ${computer.name}'),
+        containerTemplate(name: 'golang', image: 'golang:1.7', ttyEnabled: true, command: 'cat')
+    ],
+    volumes: [
+        hostPathVolume(hostPath: '/var/run/docker.sock', mountPath: '/var/run/docker.sock')
+    ]
+) {
+    node('build-pod') {
+        container('golang') {
+            stage('Checkout') {
+                sh 'time'
