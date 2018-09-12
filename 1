@@ -1,6 +1,6 @@
 podTemplate(label: 'build-pod',
     containers: [
-        containerTemplate(name: 'jnlp', image: JNLP_IMAGE, args: '${computer.jnlpmac} ${computer.name}'),
+        containerTemplate(name: 'jnlp', image: jenkins, args: '${computer.jnlpmac} ${computer.name}'),
         containerTemplate(name: 'golang', image: 'golang:1.7', ttyEnabled: true, command: 'cat')
     ],
     volumes: [
