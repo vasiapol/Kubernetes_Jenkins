@@ -1,4 +1,4 @@
-podTemplate(label: 'node2', 
+podTemplate(label: 'kubernetes.io/hostname=node1', 
     containers: [
         containerTemplate(
             name: 'golang',
