@@ -1,7 +1,6 @@
  pipeline {
 
   agent { kubernetes {
-    label 'kubernetes.io/hostname: node1'
       containerTemplate {
         name 'jnlp'
         image 'jenkinsci/jnlp-slave:2.62-alpine'
