@@ -1,7 +1,7 @@
 // this guarantees the node will use this template
 def label = "mypod-${UUID.randomUUID().toString()}"
-podTemplate(label: label) {
-    node(jenkins/label) {
+podTemplate(label: jenkins/label) {
+    node(label) {
         stage('Run shell') {
             sh 'echo hello world'
         }
