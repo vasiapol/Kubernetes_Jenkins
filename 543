@@ -1,6 +1,7 @@
 // this guarantees the node will use this template
 def label = "mypod-${UUID.randomUUID().toString()}"
 podTemplate(label:label) {
+	activeDeadlineSeconds: 300
     node(label) {
         stage('Run shell') {
             sh 'echo hello world'
