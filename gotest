@@ -1,20 +1,10 @@
-podTemplate(label: 'kubernetes.io/hostname=node1', 
-    containers: [
-        containerTemplate(
-            name: 'golang',
-            image: 'jenkinsci/slave',
-            ttyEnabled: true,
-            command: 'cat'
-        )
-    ]
-) {
-    node ('pod-golang') {
-
-        stage 'Switch to Utility Container'
-        container('golang') {
-
-          sh ("go version")
-
-        }
+def label = "mypod-${UUID.randomUUID().toString()}"
+podTemplate(label: label) {
+  node(label) {
+    stage('Run shell') {
+      container('jenkinsci/slave') {
+        sh 'echo hello world'
+      }
     }
+  }
 }
