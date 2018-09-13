@@ -6,5 +6,11 @@ podTemplate(label:label) {
         stage('Run shell') {
             sh 'echo hello world'
         }
+		stage('Time') {
+            sh 'time'
+        }
+		stage('Run shell') {
+            sh 'whoami'
+        }
     }
 }
