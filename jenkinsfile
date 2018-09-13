@@ -42,7 +42,7 @@ pipeline {
                 }
             }
         }
-        post {
+        stage {
             success {  
                 slackSend  color: "good", message: "`${env.JOB_NAME}` #${env.BUILD_NUMBER} was successful:"
             }            
