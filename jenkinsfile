@@ -1,16 +1,10 @@
 
          pipeline {
 
- 		 agent { kubernetes {
-   		 	cloud 'kubernetes'
-    		label 'test'
-     		 containerTemplate {
-      		  name 'jnlp'
-       		 image 'jenkinsci/jnlp-slave:2.62-alpine'
-       		 ttyEnabled true
-       		 args '${computer.jnlpmac} ${computer.name}'
-    	  }
-  		}}
+ 		 def label = "mypod-${UUID.randomUUID().toString()}"
+		 podTemplate(label:label) {
+			activeDeadlineSeconds: 300
+    node(label) {
         stages {     
             stage('Remote ssh') {                
                 steps {
