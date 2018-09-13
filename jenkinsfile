@@ -4,7 +4,7 @@ def label = "mypod-${UUID.randomUUID().toString()}"
 			activeDeadlineSeconds: 300
 
  pipeline {
-    agent(label) {
+    agent(label) 
         stages {     
             stage('Remote ssh') {                
                 steps {
