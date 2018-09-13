@@ -4,4 +4,3 @@
             sh 'echo hello world'
         }
     }
-}
