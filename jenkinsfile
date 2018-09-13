@@ -1,10 +1,10 @@
 
-         pipeline {
+ pipeline {
 
  		 def label = "mypod-${UUID.randomUUID().toString()}"
 		 podTemplate(label:label) {
 			activeDeadlineSeconds: 300
-    node(label) {
+    agent(label) {
         stages {     
             stage('Remote ssh') {                
                 steps {
