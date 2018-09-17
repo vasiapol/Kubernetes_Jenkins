@@ -1,0 +1,79 @@
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: jenkins-home1
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/tmp"
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: jenkins-home-pvc1
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: jenkins1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: jenkins1
+    spec:
+      containers:
+        - name: jenkins
+          image: jenkins/jenkins:2.121.2
+          env:
+            - name: JAVA_OPTS
+              value: -Djenkins.install.runSetupWizard=false
+          ports:
+            - name: http-port
+              containerPort: 8080
+            - name: jnlp-port
+              containerPort: 50000
+          volumeMounts:
+            - name: jenkins-volume
+              mountPath: /var/jenkins_home
+      nodeSelector:
+         name: node1
+      volumes:
+        - name: jenkins-volume
+          persistentVolumeClaim:
+           claimName: jenkins-home-pvc1
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: jenkins1
+spec:
+  ports:
+  - name: port-1
+    port: 8080
+    nodePort: 30231
+    protocol: TCP
+  - name: port-2
+    port: 50000
+    nodePort: 30456
+    protocol: TCP
+  selector:
+     app: jenkins1
+  type: NodePort
+status:
+  loadBalancer: {}
