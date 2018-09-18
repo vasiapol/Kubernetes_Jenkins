@@ -52,6 +52,31 @@ PersistentVolume  is a piece of storage in the cluster that Jenkins is allow to 
 
 `Service Jenkins created`
 
+```
+kubectl describe service jenkins
+
+Name:                     jenkins
+Namespace:                default
+Labels:                   <none>
+Annotations:              kubectl.kubernetes.io
+selector:                 app=jenkins
+Type:                     NodePort
+IP:                       10.233.15.208
+Port:                     port-1  8080/TCP
+TargetPort:               8080/TCP
+NodePort:                 port-1  30231/TCP
+Endpoints:                10.233.102.166:8080
+Port:                     port-2  50000/TCP
+TargetPort:               50000/TCP
+NodePort:                 port-2  30456/TCP
+Endpoints:                10.233.102.166:50000
+Session Affinity:         None
+External Traffic Policy:  Cluster
+Events:                   <none>
+```
+
+
+
 Now you can access to your Jenkins page via browser,go to Node_ip:30231
 
 ![alt text](https://cdn2.hubspot.net/hubfs/208250/Blog_Images/scalablejenkins12.png)
