@@ -10,3 +10,9 @@ Scalability is a measure that shows the ability of a system to expand its capabi
 - The ability to run many more build plans in parallel.
 * Automatically replacing corrupted Jenkins instances.
 * Automatically spinning up and removing slaves based on need, which saves costs.
+
+
+## How to run
+### Prerequisites
+- Running kubernetes cluster (to deploy kubernetes cluster you can use .[Kubespray].(https://github.com/kubernetes-incubator/kubespray.git)
+
