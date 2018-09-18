@@ -64,3 +64,15 @@ Next go to "Manage Jenkins -> Configure System -> Cloud -> Kubernetes" and fill 
 
 ![alt text](https://dzone.com/storage/temp/8389797-scalablejenkins13.png)
 
+Now you can use Kubernetes cluster as jenkins-slave.You need to specify pod template in your pipeline scripts.
+```def label = "mypod-${UUID.randomUUID().toString()}"
+podTemplate(label: label) {
+  node(label) {
+    stage('Run shell') {
+      container('mycontainer') {
+        sh 'echo hello world'
+      }
+    }
+  }
+}
+```
