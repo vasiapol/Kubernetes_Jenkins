@@ -19,6 +19,7 @@ Scalability is a measure that shows the ability of a system to expand its capabi
 
 
 ### Deployment guide
+
 1.Clone this repo:
 
 `git clone http://192.168.103.236:3000/vasa/Kubernetes.git`
@@ -39,3 +40,19 @@ PersistentVolume  is a piece of storage in the cluster that Jenkins is allow to 
  
  `PersistentVolumeClaim jenkins-home-pvc1 created`
  
+4.Run Jenkins master deployment:
+ 
+ `kubectl create  k8s_jenkins_deployment.yml`
+ 
+ `Deployment Jenkins created`
+ 
+5.Expose Jenkins service:
+
+`kubectl create  k8s_jenkins_service.yml`
+
+`Service Jenkins created`
+
+6.Install and configure Kubernetes plugin:
+
+Navigate to "Manage Jenkins -> Manage plugins -> Aviable" find Kubernetes and install it.
+Next go to "Manage Jenkins -> Configure System -> Cloud -> Kubernetes" and fill 
