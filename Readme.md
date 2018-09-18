@@ -77,3 +77,5 @@ podTemplate(label: label) {
     }
 
 ```
+
+More information of how to use Kubernetes plugin you can find [here]( https://github.com/jenkinsci/kubernetes-plugin)
