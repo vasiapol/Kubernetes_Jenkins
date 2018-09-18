@@ -7,7 +7,7 @@ Scalability is a measure that shows the ability of a system to expand its capabi
 
 Jenkins scalability gives you lots of benefits:
 
--The ability to run many more build plans in parallel.
+- The ability to run many more build plans in parallel.
 
 * Automatically replacing corrupted Jenkins instances.
 
