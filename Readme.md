@@ -59,4 +59,6 @@ Now you can access to your Jenkins page via browser,go to Node_ip:30231
 6.Install and configure Kubernetes plugin:
 
 Navigate to "Manage Jenkins -> Manage plugins -> Aviable" find Kubernetes and install it.
-Next go to "Manage Jenkins -> Configure System -> Cloud -> Kubernetes" and fill 'Kubernetes URL','Jenkins URL' and `Jenkins tunnel` appropriately to your conditions.
+Next go to "Manage Jenkins -> Configure System -> Cloud -> Kubernetes" and fill 'Kubernetes URL','Jenkins URL' and 'Jenkins tunnel' appropriately to your conditions.
+
+![alt text](https://dzone.com/storage/temp/8389797-scalablejenkins13.png)
