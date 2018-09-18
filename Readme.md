@@ -21,8 +21,9 @@ Scalability is a measure that shows the ability of a system to expand its capabi
 ### Deployment guide
 1. Clone this repo:
 
-   `git clone http://192.168.103.236:3000/vasa/Kubernetes.git`
-Create persistant volume:
+`git clone http://192.168.103.236:3000/vasa/Kubernetes.git`
+
+2.Create persistant volume:
 
 A PersistentVolume (PV) is a piece of storage in the cluster that Jenkins is allow to use.
 
