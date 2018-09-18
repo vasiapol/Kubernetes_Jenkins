@@ -29,4 +29,4 @@ A PersistentVolume (PV) is a piece of storage in the cluster that Jenkins is all
 
 `kubectl create  k8s_persistent_volume.yml`
 
-`persistentvolume/jenkins-home1 created`
+`Persistentvolume jenkins-home1 created`
