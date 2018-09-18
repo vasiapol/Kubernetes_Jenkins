@@ -53,6 +53,7 @@ PersistentVolume  is a piece of storage in the cluster that Jenkins is allow to 
 `Service Jenkins created`
 
 Now you can access to your Jenkins page via browser,go to Node_ip:30231
+
 ![alt text](https://cdn2.hubspot.net/hubfs/208250/Blog_Images/scalablejenkins12.png)
 
 
@@ -62,3 +63,4 @@ Navigate to "Manage Jenkins -> Manage plugins -> Aviable" find Kubernetes and in
 Next go to "Manage Jenkins -> Configure System -> Cloud -> Kubernetes" and fill 'Kubernetes URL','Jenkins URL' and 'Jenkins tunnel' appropriately to your conditions.
 
 ![alt text](https://dzone.com/storage/temp/8389797-scalablejenkins13.png)
+
