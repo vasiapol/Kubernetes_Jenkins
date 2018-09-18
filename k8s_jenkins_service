@@ -1,0 +1,19 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: jenkins1
+spec:
+  ports:
+  - name: port-1
+    port: 8080
+    nodePort: 30231
+    protocol: TCP
+  - name: port-2
+    port: 50000
+    nodePort: 30456
+    protocol: TCP
+  selector:
+     app: jenkins1
+  type: NodePort
+status:
+  loadBalancer: {}
