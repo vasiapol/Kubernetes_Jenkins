@@ -25,8 +25,13 @@ Scalability is a measure that shows the ability of a system to expand its capabi
 
 2.Create persistant volume:
 
-A PersistentVolume (PV) is a piece of storage in the cluster that Jenkins is allow to use.
+PersistentVolume  is a piece of storage in the cluster that Jenkins is allow to use.
 
 `kubectl create  k8s_persistent_volume.yml`
 
 `Persistentvolume jenkins-home1 created`
+
+3.Create persistant volume claim:
+ 
+ PersistentVolumeClaim  is a request for storage by a user.
+ 
