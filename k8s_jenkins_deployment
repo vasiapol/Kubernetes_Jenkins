@@ -1,0 +1,31 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: jenkins1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: jenkins1
+    spec:
+      containers:
+        - name: jenkins
+          image: jenkins/jenkins:2.121.2
+          env:
+            - name: JAVA_OPTS
+              value: -Djenkins.install.runSetupWizard=false
+          ports:
+            - name: http-port
+              containerPort: 8080
+            - name: jnlp-port
+              containerPort: 50000
+          volumeMounts:
+            - name: jenkins-volume
+              mountPath: /var/jenkins_home
+      nodeSelector:
+         name: node1
+      volumes:
+        - name: jenkins-volume
+          persistentVolumeClaim:
+           claimName: jenkins-home-pvc1
