@@ -16,3 +16,11 @@ Scalability is a measure that shows the ability of a system to expand its capabi
 ### Prerequisites
 - Running kubernetes cluster (to deploy kubernetes cluster you can use [Kubespray](https://github.com/kubernetes-incubator/kubespray.git)
 - Kubectl configured to perform deployment tasks
+
+
+### Deployment guide
+1. Clone this repo:
+    `git clone http://192.168.103.236:3000/vasa/Kubernetes.git`
+
+
+
