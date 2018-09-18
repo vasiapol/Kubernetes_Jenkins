@@ -35,3 +35,7 @@ PersistentVolume  is a piece of storage in the cluster that Jenkins is allow to 
  
  PersistentVolumeClaim  is a request for storage by a user.
  
+ `kubectl create  k8s_persistent_volume_claim.yml`
+ 
+ `PersistentVolumeClaim jenkins-home-pvc1 created`
+ 
