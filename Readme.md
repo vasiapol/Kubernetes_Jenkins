@@ -9,6 +9,6 @@ Jenkins scalability gives you lots of benefits:
 
 -The ability to run many more build plans in parallel.
 
--Automatically replacing corrupted Jenkins instances.
+* Automatically replacing corrupted Jenkins instances.
 
--Automatically spinning up and removing slaves based on need, which saves costs.
+* Automatically spinning up and removing slaves based on need, which saves costs.
