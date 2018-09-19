@@ -32,7 +32,7 @@ PersistentVolume  is a piece of memory in the cluster that Jenkins is allow to u
 
 `Persistentvolume jenkins-home1 created`
 
-3.Create persistant volume claim:
+3.Create persistent volume claim:
  
  PersistentVolumeClaim  is a request for storage by a user.
  
