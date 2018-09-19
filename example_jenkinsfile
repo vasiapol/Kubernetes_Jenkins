@@ -5,6 +5,7 @@ pipeline {
             stage('Remote ssh') {                
                 steps {
                     script {
+		    
 			def label = "mypod-${UUID.randomUUID().toString()}"
  				podTemplate(label:label) {
 				containerTemplate(name: 'jenkins-slave', image: 'jenkins/jnlp-slave:alpine', ttyEnabled: true,)
