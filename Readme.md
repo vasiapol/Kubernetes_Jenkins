@@ -77,7 +77,7 @@ Events:                   <none>
 
 
 
-Now you can access to your Jenkins page via browser,go to Node_ip:30231
+Now you can access to your Jenkins page via browser,go to <any_node_ip>:30231
 
 ![alt text](https://cdn2.hubspot.net/hubfs/208250/Blog_Images/scalablejenkins12.png)
 
