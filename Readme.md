@@ -7,7 +7,7 @@ Scalability is a measure that shows the ability of a system to expand its capabi
 
 #### Jenkins scalability gives you lots of benefits:
 
-- The ability to run many more build plans in parallel.
+- The ability to run more build plans in parallel.
 * Automatically replacing corrupted Jenkins instances.
 * Automatically spinning up and removing slaves based on need, which saves costs.
 
@@ -24,7 +24,7 @@ Scalability is a measure that shows the ability of a system to expand its capabi
 
 `git clone http://192.168.103.236:3000/vasa/Kubernetes.git`
 
-2.Create persistant volume:
+2.Create persistent volume:
 
 PersistentVolume  is a piece of storage in the cluster that Jenkins is allow to use.
 
