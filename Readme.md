@@ -26,7 +26,7 @@ Scalability is a measure that shows the ability of a system to expand its capabi
 
 2.Create persistent volume:
 
-PersistentVolume  is a piece of storage in the cluster that Jenkins is allow to use.
+PersistentVolume  is a piece of memory in the cluster that Jenkins is allow to use.
 
 `kubectl create  k8s_persistent_volume.yml`
 
